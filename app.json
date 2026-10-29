@@ -1,17 +1,25 @@
 {
   "expo": {
-    "name": "bharathbuild-app",
-    "slug": "bharathbuild-app",
+    "name": "BharathBuild",
+    "slug": "bharathbuild-mobile",
+    "scheme": "bharathbuild",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.bharathbuild.mobile",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Choose photos of your work to add to your ads.",
+        "NSCameraUsageDescription": "Take photos of your work to add to your ads."
+      }
     },
     "android": {
+      "package": "com.bharathbuild.mobile",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0D2B45",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -19,7 +27,27 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      "expo-web-browser",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 260,
+          "backgroundColor": "#F8F9FB"
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Choose photos of your work to add to your ads."
+        }
+      ]
+    ]
   }
 }
